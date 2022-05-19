@@ -1,10 +1,20 @@
 package com.vroncato.financeiro.app.model;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tab_movimentacao_tipo_despesa")
 public class MovimentacaoTipoDespesa {
-	
+	@Enumerated(EnumType.STRING)
 	private MovimentacaoTipoDespesaFixa despesaFixa;
+	@Enumerated(EnumType.STRING)
 	private MovimentacaoTipoDespesaVariavel despesaVariavel;
+	@Enumerated(EnumType.STRING)
 	private MovimentacaoTipoDespesaExtra despesaExtra;
+	@Enumerated(EnumType.STRING)
 	private MovimentacaoTipoDespesaDiversos despesaDiversos;
 	
 	public MovimentacaoTipoDespesaFixa getDespesaFixa() {
