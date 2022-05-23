@@ -22,8 +22,9 @@ public class Movimentacao {
 	private Date dataOcorrencia;
 	@Column(name = "data_lancamento")
 	private LocalDateTime dataLancamento;
-	
+	@Column(length = 50)
 	private String descricao;
+	@Column(length = 30)
 	private String descricaoComplementar;
 	private Double valor;
 	

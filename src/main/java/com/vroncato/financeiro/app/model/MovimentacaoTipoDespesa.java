@@ -3,11 +3,18 @@ package com.vroncato.financeiro.app.model;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tab_movimentacao_tipo_despesa")
 public class MovimentacaoTipoDespesa {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
 	@Enumerated(EnumType.STRING)
 	private MovimentacaoTipoDespesaFixa despesaFixa;
 	@Enumerated(EnumType.STRING)
@@ -17,6 +24,12 @@ public class MovimentacaoTipoDespesa {
 	@Enumerated(EnumType.STRING)
 	private MovimentacaoTipoDespesaDiversos despesaDiversos;
 	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public MovimentacaoTipoDespesaFixa getDespesaFixa() {
 		return despesaFixa;
 	}
